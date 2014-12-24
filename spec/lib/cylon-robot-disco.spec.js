@@ -8,7 +8,7 @@ var Adaptor = source('adaptor'),
 describe("Cylon.RobotDisco", function() {
   describe("#adaptors", function() {
     it('is an array of supplied adaptors', function() {
-      expect(module.adaptors).to.be.eql([]);
+      expect(module.adaptors).to.be.eql(['robot-disco']);
     });
   });
 
