@@ -4,6 +4,8 @@
 [![Build Status](https://secure.travis-ci.org/lorenwest/cylon-robot-disco.svg?branch=master)](https://travis-ci.org/lorenwest/cylon-robot-disco)&nbsp;&nbsp;
 [release notes](https://github.com/lorenwest/cylon-robot-disco/blob/master/History.md)
 
+This is the NodeJS implementation of the [RobotDisco](https://github.com/lorenwest/robot-disco) specification.
+
 ...needs more readme...
 
 For more information about Cylon, check out the repo at

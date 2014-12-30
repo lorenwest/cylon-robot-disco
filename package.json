@@ -5,12 +5,17 @@
   "description": "Cylon Robot Discovery",
   "author": "Loren West <open_source@lorenwest.com>",
   "homepage": "https://github.com/lorenwest/cylon-robot-disco",
-  "keywords": ["cylon", "robot", "network", "discovery", "robotdisco"],
+  "keywords": ["cylon", "cylonjs", "robot", "discovery", "network", "robotdisco", "robodisco", "cppp-io", "artoo", "gobot", "arduino", "beaglebone", "edison", "raspi", "raspberrypi"],
   "repository": {
     "type" : "git",
     "url" : "https://github.com/lorenwest/cylon-robot-disco.git"
   },
-  "licenses": ["MIT"],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/lorenwest/cylon-robot-disco/blob/master/LICENSE"
+    }
+  ],
 
   "devDependencies": {
     "sinon-chai": "2.6.0",
@@ -25,12 +30,17 @@
 
   "dependencies": {
     "bluebird": ">=2.3.11 <3.0.0",
-    "cylon": "~0.21.1",
+    "clone": ">=0.2.0 <1.0.0",
+    "cylon": ">=0.21.1 <1.0.0",
+    "deep-extend": ">=0.3.2 <1.0.0",
+    "eventsource": ">=0.1.4 <1.0.0",
     "node-discover": ">=0.0.14 <1.0.0",
+    "node-uuid": ">=1.4.2 <2.0.0",
     "request": ">=2.48.0 <3.0.0"
   },
 
+  "engines": { "node": ">= 0.10.0" },
   "scripts": {
-    "test": "make test"
+    "test": "make bdd"
   }
 }
