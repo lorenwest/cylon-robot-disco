@@ -4,9 +4,37 @@
 [![Build Status](https://secure.travis-ci.org/lorenwest/cylon-robot-disco.svg?branch=master)](https://travis-ci.org/lorenwest/cylon-robot-disco)&nbsp;&nbsp;
 [release notes](https://github.com/lorenwest/cylon-robot-disco/blob/master/History.md)
 
-This is the NodeJS implementation of the [RobotDisco](https://github.com/lorenwest/robot-disco) specification.
+# Cylon Robot Discovery
 
-...needs more readme...
+This package discovers other robots in a local network running RobotDisco.
+
+Once discovered, it attaches the remote robot as a proxy robot into the `Cylon.robots` in this process. This lets you easily interact with all robots in the disco.
+
+To invoke a command on a remote robot, just invoke their command directly.  It will return a [promise](https://www.promisejs.org/):
+
+```
+var Jane = Cylon.robots.Jane;
+Jane.getMood()
+  .then(function(mood) {
+    Cylon.logger("Jane's mood is: " + mood);
+  });
+```
+
+To listen for events on a remote robot, just start listening.  Robot Disco takes care of connecting with and forwarding events to you:
+
+```
+var Jane = Cylon.robots.Jane;
+Jane.on('mood_change', function(mood) {
+  Cylon.logger("Jane's mood has changed to: " + mood);
+});
+
+var Florist = Cylon.robots.Florist;
+Florist.sendRoseTo('Jane');
+```
+
+When running the [Cylon API](http://cylonjs.com/documentation/core/api/), all robots in the network are represented in your process.
+
+This allows API clients such as the [Robeaux UI](https://github.com/hybridgroup/robeaux) to interact with all robots by connecting with any robot running Robot Disco.
 
 For more information about Cylon, check out the repo at
 https://github.com/hybridgroup/cylon
@@ -15,35 +43,22 @@ https://github.com/hybridgroup/cylon
 
 Install the module with: `npm install cylon-robot-disco`
 
-## Examples
+## Getting Discovered
 
-## Connecting
-
-Take your robot to the club by adding the robot-disco connection:
+To join the club, just add robot-disco to your connections:
 
 ```javascript
-var Cylon = require('cylon');
 
 Cylon.robot({
   connections: {
-    beaglebone: {adaptor: 'beaglebone' },
+    ...
     disco: {adaptor: 'robot-disco' }
   },
-  devices: {
-    pump_motor_on: {
-      driver: 'direct-pin',
-      pin: 'P9_11',
-      connection: 'beaglebone'
-    }
-  }
-
-  work: function(my) {
-    my.pump_motor_on.digitalWrite(1);
-  }
+  ...
 }).start();
 ```
 
 ## License
 
-Copyright (c) 2014-2015 Loren West and other contributors.
+Copyright (c) 2015 Loren West and other contributors.
 See `LICENSE` for more details
