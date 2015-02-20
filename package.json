@@ -1,6 +1,6 @@
 {
   "name": "cylon-robot-disco",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/cylon-robot-disco.js",
   "description": "Cylon Robot Discovery",
   "author": "Loren West <open_source@lorenwest.com>",
