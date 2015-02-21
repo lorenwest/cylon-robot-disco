@@ -11,6 +11,7 @@ describe("Cylon.Adaptors.RobotDisco", function() {
   });
 
   it("Calls the connect callback", function(done) {
+    adaptor.robot = {events:[]};
     adaptor.connect(done);
   });
 
