@@ -1,6 +1,6 @@
 {
   "name": "cylon-robot-disco",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "main": "lib/cylon-robot-disco.js",
   "description": "Cylon Robot Discovery",
   "author": "Loren West <open_source@lorenwest.com>",
@@ -25,12 +25,13 @@
   },
 
   "peerDependencies": {
-    "cylon": ">=0.22.0 < 1"
+    "cylon": ">=1.0.0 < 2",
+    "cylon-api-http": ">=0.3.0 < 1"
   },
 
   "dependencies": {
     "bluebird": ">=2.3.11 <3.0.0",
-    "clone": ">=0.2.0 <1.0.0",
+    "clone": ">=1.0.0 <2.0.0",
     "deep-extend": ">=0.3.2 <1.0.0",
     "eventsource": ">=0.1.4 <1.0.0",
     "node-discover": ">=0.0.14 <1.0.0",
